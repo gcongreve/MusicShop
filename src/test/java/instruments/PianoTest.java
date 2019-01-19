@@ -12,7 +12,8 @@ public class PianoTest {
 
     @Before
     public void before(){
-        piano = new Piano("Pianotor", "Wood", "blue", 2000, 24, "plink plonk");
+        piano = new Piano("Pianotor", "Wood", "blue", 2000, 24,
+                2, "plink plonk");
     }
 
     @Test
@@ -43,5 +44,10 @@ public class PianoTest {
     @Test
     public void getNumberOfKeys() {
         assertEquals(24, piano.getNumberOfKeys());
+    }
+
+    @Test
+    public void getNumberOfPedals(){
+        assertEquals(2, piano.getNumberOfPedals());
     }
 }

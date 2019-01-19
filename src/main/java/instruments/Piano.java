@@ -2,25 +2,17 @@ package instruments;
 
 import enums.InstrumentType;
 
-public class Piano extends Instrument {
+public class Piano extends Keyboard {
 
-    private int numberOfKeys;
-    private InstrumentType type;
+    int numberOfPedals;
 
 
-    public Piano(String modelName, String material, String colour, int boughtPrice, int numberOfKeys, String instrumentNoise) {
-        super(modelName, material, colour, boughtPrice, instrumentNoise);
-        this.type = InstrumentType.KEYBOARD;
-        this.numberOfKeys = numberOfKeys;
+    public Piano(String modelName, String material, String colour, int boughtPrice, int numberOfKeys, int numberOfPedals, String instrumentNoise) {
+        super(modelName, material, colour, boughtPrice, numberOfKeys, instrumentNoise);
+        this.numberOfPedals = numberOfPedals;
     }
 
-    public InstrumentType getType() {
-        return type;
+    public int getNumberOfPedals() {
+        return numberOfPedals;
     }
-
-    public int getNumberOfKeys() {
-        return numberOfKeys;
-    }
-
-
 }
