@@ -4,8 +4,8 @@ import enums.InstrumentType;
 
 public abstract class Guitar extends Instrument {
 
-    int numberOfStrings;
-    InstrumentType instrumentType;
+    private int numberOfStrings;
+    private InstrumentType instrumentType;
 
     public Guitar(String modelName, String material, String colour, int boughtPrice, String instrumentNoise, int numberOfStrings) {
         super(modelName, material, colour, boughtPrice, instrumentNoise);
