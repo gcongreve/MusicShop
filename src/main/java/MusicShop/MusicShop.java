@@ -1,6 +1,7 @@
 package MusicShop;
 
 import behaviours.ISell;
+import instruments.Instrument;
 import stockItems.StockItem;
 
 import java.util.ArrayList;
@@ -52,5 +53,20 @@ public class MusicShop {
            profit += stockItem.getProfit();
         }
         return profit;
+    }
+
+    public double stockValue(){
+        double value = 0;
+        for (ISell stockThing : stock){
+            if (stockThing instanceof Instrument){
+                Instrument instrument = ((Instrument) stockThing);
+                value += instrument.getBoughtPrice();
+            }
+            else if (stockThing instanceof StockItem){
+                StockItem stockItem = ((StockItem) stockThing);
+                value += stockItem.getBoughtPrice();
+            }
+        }
+        return value;
     }
 }

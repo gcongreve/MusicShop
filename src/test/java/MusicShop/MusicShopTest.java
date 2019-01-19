@@ -82,4 +82,9 @@ public class MusicShopTest {
     public void getPotentialProfit(){
         assertEquals(304, musicShop.potentialProfit(), 0.01);
     }
+
+    @Test
+    public void getBoughtCostOfStock(){
+        assertEquals(1510, musicShop.stockValue(), 0.01);
+    }
 }
