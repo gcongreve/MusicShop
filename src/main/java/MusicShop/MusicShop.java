@@ -69,4 +69,22 @@ public class MusicShop {
         }
         return value;
     }
+
+    public void sellItem(ISell item){
+        addMoneyToTill(item.sellingPrice());
+        removeItemFromStock(item);
+    }
+
+    public void changeMarkupOfItem(ISell item, Double markupChange){
+        if (item instanceof Instrument){
+            Instrument instrument = ((Instrument) item);
+            instrument.setMarkup(markupChange);
+        }
+        else if (item instanceof StockItem){
+            StockItem stockItem = ((StockItem) item);
+            stockItem.setMarkupPercent(markupChange);
+        }
+    }
+
+
 }

@@ -87,4 +87,29 @@ public class MusicShopTest {
     public void getBoughtCostOfStock(){
         assertEquals(1510, musicShop.stockValue(), 0.01);
     }
+
+    @Test
+    public void canSellItem(){
+        musicShop.sellItem(piano);
+        assertEquals(1220, musicShop.getTillTotal(), 0.01);
+        assertEquals(2, musicShop.getStock().size());
+    }
+
+    @Test
+    public void canChangeMarkupOfInstrument(){
+        emptyShop.addItemsToStock(piano);
+        assertEquals(200, emptyShop.potentialProfit(), 0.01);
+        emptyShop.changeMarkupOfItem(piano, 50.00);
+        assertEquals(500, emptyShop.potentialProfit(), 0.01);
+    }
+
+    @Test
+    public void canChangeMarkupOfStockItem(){
+        emptyShop.addItemsToStock(sheetMusic);
+        assertEquals(2, emptyShop.potentialProfit(), 0.01);
+        emptyShop.changeMarkupOfItem(sheetMusic, 50.00);
+        assertEquals(2.5, emptyShop.potentialProfit(), 0.01);
+    }
+
+
 }
