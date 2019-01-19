@@ -9,10 +9,17 @@ public class MusicShop {
 
     private ArrayList<ISell> stock;
     private Till till;
+    private String name;
 
-    public MusicShop(ArrayList<ISell> stock) {
-        this.stock = stock;
+
+    public MusicShop(String name) {
+        this.name = name;
+        this.stock = new ArrayList<>();
         this.till = new Till(20);
+    }
+
+    public String getName() {
+        return name;
     }
 
     public ArrayList<ISell> getStock() {
@@ -37,5 +44,13 @@ public class MusicShop {
 
     public void removeItemFromStock(ISell stockItem){
         this.stock.remove(stockItem);
+    }
+
+    public double potentialProfit(){
+        double profit = 0;
+        for (ISell stockItem : stock ){
+           profit += stockItem.getProfit();
+        }
+        return profit;
     }
 }
