@@ -19,6 +19,10 @@ public class MusicShop {
         this.till = new Till(20);
     }
 
+    public double getInstrumentMarkup(Instrument instrument){
+        return instrument.getMarkup();
+    }
+
     public String getName() {
         return name;
     }

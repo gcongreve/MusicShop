@@ -111,5 +111,9 @@ public class MusicShopTest {
         assertEquals(2.5, emptyShop.potentialProfit(), 0.01);
     }
 
+    @Test
+    public void canGetInstrumentMarkup(){
+        assertEquals(20, musicShop.getInstrumentMarkup(piano), 0.01);
+    }
 
 }

@@ -8,7 +8,8 @@ public abstract class Keyboard extends Instrument {
     private InstrumentType type;
 
 
-    public Keyboard(String modelName, String material, String colour, int boughtPrice, int numberOfKeys, String instrumentNoise) {
+    public Keyboard(String modelName, String material, String colour, int boughtPrice,
+                    int numberOfKeys, String instrumentNoise) {
         super(modelName, material, colour, boughtPrice, instrumentNoise);
         this.type = InstrumentType.KEYBOARD;
         this.numberOfKeys = numberOfKeys;
